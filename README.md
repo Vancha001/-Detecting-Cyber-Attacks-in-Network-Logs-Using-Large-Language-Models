@@ -26,30 +26,33 @@ Other complex attacks
 ✅ Steps Followed in the Project
 
 
-<h1>🔹 Step 1: Import Required Libraries </h1>
-python
+### <h2 style="font-size: 1.5em; font-weight: 700; color: #2e86c1;">🔹 Step 1: Import Required Libraries</h2>
+```python
 
-Edit
+
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import openai  # or HuggingFace for LLaMA2
 Necessary libraries for data handling, visualization, and API interaction are imported.
+```
 
 
-<h1>🔹 Step 2: Mount Google Drive </h1>
-python
+### <h2 style="font-size: 1.5em; font-weight: 700; color: #2e86c1;">🔹 Step 2: Mount Google Drive </h2>
 
-Edit
+```python
+
 from google.colab import drive
 drive.mount('/content/drive')
 Google Drive is mounted to access datasets and save outputs for later analysis.
+```
 
 
 <h1>🔹 Step 3: Connect to LLM API using API Key</h1>
+
 ```python
 
-Edit
+
 openai.api_key = "YOUR_API_KEY"
 You can use APIs like OpenAI (GPT-4) or HuggingFace (LLaMA2).
 Set environment variables or use Colab secrets for safe API key storage.
@@ -64,15 +67,15 @@ Each row of the dataset is classified into Attack or Non-Attack.
 
 Store the results in a structured format (.csv or DataFrame).
 
-python
-Copy
-Edit
+```python
+
+
 results = []
 for index, row in df.iterrows():
     prompt = f"Classify this traffic data: {row['log']}"
     response = openai.ChatCompletion.create(...)
     results.append(response)
-
+```
 ![App Screenshot 1](app1.png)
 
     
@@ -89,12 +92,12 @@ Accuracy
 
 Compare performance of LLM models vs traditional methods.
 
-python
-Copy
-Edit
+```python
+
+
 from sklearn.metrics import classification_report
 print(classification_report(y_true, y_pred))
-
+```
 
 
 <h1>🔹 Step 7: Evaluate Results with Graphs </h1>
@@ -106,12 +109,12 @@ Precision-recall curves
 
 Model comparison bar charts
 
-python
-Copy
-Edit
+```python
+
+
 import seaborn as sns
 sns.heatmap(confusion_matrix(y_true, y_pred), annot=True)
-
+```
 
 <h1>here is Datasets link https://drive.google.com/drive/folders/1unaf_mw7BHYIj0EBPFwXoNsV9PFOqTgY?usp=sharing  </h1>
 
