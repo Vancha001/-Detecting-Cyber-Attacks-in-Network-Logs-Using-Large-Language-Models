@@ -24,7 +24,9 @@ Ransomware
 Other complex attacks
 
 ✅ Steps Followed in the Project
-🔹 Step 1: Import Required Libraries
+
+
+<h1>🔹 Step 1: Import Required Libraries </h1>
 python
 Copy
 Edit
@@ -34,7 +36,8 @@ import matplotlib.pyplot as plt
 import openai  # or HuggingFace for LLaMA2
 Necessary libraries for data handling, visualization, and API interaction are imported.
 
-🔹 Step 2: Mount Google Drive
+
+<h1>🔹 Step 2: Mount Google Drive </h1>
 python
 Copy
 Edit
@@ -42,35 +45,21 @@ from google.colab import drive
 drive.mount('/content/drive')
 Google Drive is mounted to access datasets and save outputs for later analysis.
 
-🔹 Step 3: Connect to LLM API using API Key
+
+<h1>🔹 Step 3: Connect to LLM API using API Key</h1>
 python
 Copy
 Edit
 openai.api_key = "YOUR_API_KEY"
 You can use APIs like OpenAI (GPT-4) or HuggingFace (LLaMA2).
-
 Set environment variables or use Colab secrets for safe API key storage.
 
-🔹 Step 4: Give LLM Access to Data and Perform Basic Operations
+
+<h1>🔹 Step 4: Give LLM Access to Data and Perform Basic Operations</h1>
 Loop through dataset rows and feed traffic logs to the LLM.
 
-Use prompt engineering techniques to classify each instance.
 
-Example prompt:
-
-php-template
-Copy
-Edit
-Classify the following network activity: <data_row>
-Techniques used:
-
-Zero-shot: Direct classification without examples.
-
-CoT: LLM explains its reasoning before classification.
-
-Textshot: Few-shot learning with in-context examples.
-
-🔹 Step 5: Classify Files
+<h1>🔹 Step 5: Classify Files </h1>
 Each row of the dataset is classified into Attack or Non-Attack.
 
 Store the results in a structured format (.csv or DataFrame).
@@ -83,7 +72,9 @@ for index, row in df.iterrows():
     prompt = f"Classify this traffic data: {row['log']}"
     response = openai.ChatCompletion.create(...)
     results.append(response)
-🔹 Step 6: Evaluate Results
+
+    
+<h1>🔹 Step 6: Evaluate Results </h1>
 Evaluate results using traditional metrics:
 
 Precision
@@ -101,7 +92,10 @@ Copy
 Edit
 from sklearn.metrics import classification_report
 print(classification_report(y_true, y_pred))
-🔹 Step 7: Evaluate Results with Graphs
+
+
+
+<h1>🔹 Step 7: Evaluate Results with Graphs </h1>
 Use matplotlib or seaborn to create:
 
 Confusion matrix
