@@ -28,7 +28,7 @@ Other complex attacks
 
 <h1>🔹 Step 1: Import Required Libraries </h1>
 python
-Copy
+
 Edit
 import pandas as pd
 import numpy as np
@@ -39,7 +39,7 @@ Necessary libraries for data handling, visualization, and API interaction are im
 
 <h1>🔹 Step 2: Mount Google Drive </h1>
 python
-Copy
+
 Edit
 from google.colab import drive
 drive.mount('/content/drive')
@@ -47,13 +47,13 @@ Google Drive is mounted to access datasets and save outputs for later analysis.
 
 
 <h1>🔹 Step 3: Connect to LLM API using API Key</h1>
-python
-Copy
+```python
+
 Edit
 openai.api_key = "YOUR_API_KEY"
 You can use APIs like OpenAI (GPT-4) or HuggingFace (LLaMA2).
 Set environment variables or use Colab secrets for safe API key storage.
-
+```
 
 <h1>🔹 Step 4: Give LLM Access to Data and Perform Basic Operations</h1>
 Loop through dataset rows and feed traffic logs to the LLM.
@@ -72,6 +72,8 @@ for index, row in df.iterrows():
     prompt = f"Classify this traffic data: {row['log']}"
     response = openai.ChatCompletion.create(...)
     results.append(response)
+
+![App Screenshot 1](app1.png)
 
     
 <h1>🔹 Step 6: Evaluate Results </h1>
